@@ -8,18 +8,17 @@ import net.minecraft.structure.StructureManager;
 import net.minecraft.structure.StructurePlacementData;
 import net.minecraft.structure.processor.BlockIgnoreStructureProcessor;
 import net.minecraft.util.BlockRotation;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ServerWorldAccess;
 
-public final class SliderDungeonStartPiece extends SimpleStructurePiece{
-    public SliderDungeonStartPiece(StructureManager manager, BlockPos pos, BlockRotation rotation){
-        super(SliderDungeonFeature.PIECE_START, 0, manager, SliderDungeonFeature.START, SliderDungeonFeature.START.toString(), createPlacementData(rotation), pos);
+public final class SliderDungeonStairSegmentPiece extends SimpleStructurePiece{
+    public SliderDungeonStairSegmentPiece(StructureManager manager, BlockPos pos, BlockRotation rotation){
+        super(SliderDungeonFeature.PIECE_STAIR_SEGMENT, 0, manager, SliderDungeonFeature.STAIR_SEGMENT, SliderDungeonFeature.STAIR_SEGMENT.toString(), createPlacementData(rotation), pos);
     }
     
-    public SliderDungeonStartPiece(ServerWorld world, NbtCompound nbt){
-        super(SliderDungeonFeature.PIECE_START, nbt, world, (identifier)->createPlacementData(BlockRotation.valueOf(nbt.getString("rotation"))));
+    public SliderDungeonStairSegmentPiece(ServerWorld world, NbtCompound nbt){
+        super(SliderDungeonFeature.PIECE_STAIR_SEGMENT, nbt, world, (identifier)->createPlacementData(BlockRotation.valueOf(nbt.getString("rotation"))));
     }
     
     private static StructurePlacementData createPlacementData(BlockRotation rotation){
