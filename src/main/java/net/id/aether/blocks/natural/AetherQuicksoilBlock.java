@@ -16,14 +16,17 @@ public class AetherQuicksoilBlock extends Block implements Fertilizable {
         super(settings);
     }
 
+    @Override
     public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
         return world.getBlockState(pos.up()).isAir();
     }
 
+    @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
+    @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         BlockPos blockPos = pos.up();
         BlockState blockState = AetherBlocks.FLUTEGRASS.getDefaultState();

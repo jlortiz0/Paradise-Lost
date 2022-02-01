@@ -19,12 +19,12 @@ import java.util.stream.Stream;
 
 import static net.id.aether.Aether.locate;
 
-//TODO Is this the best place for this?
+// TODO: Is this the best place for this?
 
 /**
  * The home for all Aether sounds.
  */
-public final class AetherSoundEvents{
+public final class AetherSoundEvents {
     private AetherSoundEvents(){
         throw new RuntimeException();
     }
@@ -218,7 +218,7 @@ public final class AetherSoundEvents{
     
             @Override
             public String getResourcePackName(){
-                return "The Aether Reborn";
+                return "Paradise Lost";
             }
     
             @Override
@@ -226,10 +226,10 @@ public final class AetherSoundEvents{
         };
     }
     
-    private static abstract class AbstractSoundEvent extends SoundEvent{
+    private static abstract class AbstractSoundEvent extends SoundEvent {
         protected final String subtitle;
         
-        private AbstractSoundEvent(Identifier id, String subtitle){
+        private AbstractSoundEvent(Identifier id, String subtitle) {
             super(id);
             this.subtitle = subtitle;
         }

@@ -1,9 +1,10 @@
 package net.id.aether.entities.hostile.swet;
 
+import net.id.aether.client.rendering.particle.AetherParticles;
+import net.id.aether.client.rendering.particle.ColoredSplashParticleEffect;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -27,9 +28,9 @@ public class BlueSwetEntity extends SwetEntity {
             }
         }
     }
-
+    
     @Override
-    protected ParticleEffect getParticles() {
-        return ParticleTypes.SPLASH;
+    protected ParticleEffect createParticle() {
+        return AetherParticles.coloredSplash(0x52_7A_8E);
     }
 }

@@ -16,20 +16,22 @@ import net.minecraft.world.gen.feature.RandomPatchFeatureConfig;
 import java.util.List;
 import java.util.Random;
 
-@SuppressWarnings("unchecked")
 public class AetherGrassBlock extends SpreadableAetherBlock implements Fertilizable {
     public AetherGrassBlock(Settings settings) {
         super(settings);
     }
 
+    @Override
     public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
         return world.getBlockState(pos.up()).isAir();
     }
 
+    @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
+    @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         BlockPos blockPos = pos.up();
         BlockState blockState = AetherBlocks.AETHER_GRASS.getDefaultState();

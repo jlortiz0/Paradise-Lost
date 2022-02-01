@@ -1,14 +1,15 @@
 package net.id.aether.util;
 
-import java.util.function.Function;
 import net.fabricmc.loader.api.FabricLoader;
+
+import java.util.function.Function;
 
 import static net.id.aether.Aether.MOD_ID;
 
 public final class Config{
     private Config(){}
     
-    //TODO When sodium supports custom render layers, make this check the version
+    // TODO: When sodium supports custom render layers, make this check the version
     public static final boolean SODIUM_WORKAROUND = getBoolean("sodium_workaround", isLoaded("sodium"));
     
     private static boolean isLoaded(String id){

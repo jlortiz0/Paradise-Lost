@@ -24,12 +24,12 @@
     "Hugo Payn (DevilBringer) - GG design lead"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/aether",
-    "sources": "https://github.com/devs-immortal/The-Aether",
-    "issues": "https://github.com/devs-immortal/The-Aether/issues"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/paradise-lost",
+    "sources": "https://github.com/devs-immortal/Paradise-Lost",
+    "issues": "https://github.com/devs-immortal/Paradise-Lost/issues"
   },
   "depends": {
-    "fabricloader": ">=0.12.5",
+    "fabricloader": ">=0.12.12",
     "minecraft": ">=1.17",
     "java": ">=16",
     "fabric-api-base": "*",
