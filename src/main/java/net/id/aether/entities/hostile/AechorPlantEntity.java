@@ -1,9 +1,9 @@
 package net.id.aether.entities.hostile;
 
-import net.id.aether.blocks.AetherBlocks;
 import net.id.aether.entities.passive.AetherAnimalEntity;
 import net.id.aether.entities.projectile.PoisonNeedleEntity;
 import net.id.aether.items.AetherItems;
+import net.id.aether.tag.AetherBlockTags;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.goal.ActiveTargetGoal;
@@ -62,17 +62,17 @@ public class AechorPlantEntity extends AetherAnimalEntity implements RangedAttac
     public void tick() {
         super.tick();
 
-        if (this.hurtTime > 0)
+        if (!this.world.getBlockState(this.getBlockPos().down(1)).isIn(AetherBlockTags.AECHOR_PLANT_VALID_GROUND)) {
+            this.kill();
+        }
+
+        if (this.hurtTime > 0) {
             this.sinage += 0.9F;
-
-        this.sinage += (this.getAttacker() != null ? 0.3f : 0.1f);
-
+        } else {
+            this.sinage += (this.getAttacker() != null ? 0.3f : 0.1f);
+        }
         if (this.sinage > 3.141593F * 2F)
             this.sinage -= (3.141593F * 2F);
-
-        if (this.world.getBlockState(this.getBlockPos().down(1)).getBlock() != AetherBlocks.AETHER_GRASS_BLOCK) {
-            this.tickInVoid();
-        }
     }
 
     @Override
@@ -83,20 +83,19 @@ public class AechorPlantEntity extends AetherAnimalEntity implements RangedAttac
 
     @Override
     public boolean canSpawn(WorldAccess worldIn, SpawnReason SpawnReason) {
-        return worldIn.getBlockState(this.getBlockPos().down(1)).getBlock() == AetherBlocks.AETHER_GRASS_BLOCK
-                && this.random.nextInt(400) == 0;
+        return worldIn.getBlockState(this.getBlockPos().down(1)).isIn(AetherBlockTags.AECHOR_PLANT_VALID_GROUND)
+                && worldIn.getBaseLightLevel(this.getBlockPos(), 0) > 8;
     }
 
     @Override
-    public void attack(LivingEntity targetIn, float arg1) {
-        double x = targetIn.getX() - this.getX();
-        double z = targetIn.getZ() - this.getZ();
-        final double sqrt = Math.sqrt((x * x) + (z * z) + 0.1D);
-        double y = 0.1D + (sqrt * 0.5D) + ((this.getY() - targetIn.getY()) * 0.25D);
-        double distance = 5.0D / sqrt;
-
+    public void attack(LivingEntity targetIn, float distFactor) {
         PoisonNeedleEntity needle = new PoisonNeedleEntity(this, this.world);
-        needle.setVelocity(x * distance, y, z * distance, 0.285F + ((float) y * 0.05F), 1.0F);
+        double x = targetIn.getX() - this.getX();
+        double y = targetIn.getBoundingBox().minY + (double)(targetIn.getHeight() / 3.0F) - needle.getY();
+        double z = targetIn.getZ() - this.getZ();
+        double distance = Math.sqrt((float) (x * x + z * z));
+
+        needle.setVelocity(x, y + distance * 0.20000000298023224D, z, 1.0F, (float)(14 - this.world.getDifficulty().getId() * 4));
         this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.2F / (this.getRandom().nextFloat() * 0.2F + 0.9F));
         this.world.spawnEntity(needle);
     }
