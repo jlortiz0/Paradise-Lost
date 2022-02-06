@@ -13,11 +13,14 @@
   - The 1/400 random check for spawning has been replaced by a base light level check for > 8
   - Several aspects of the attack vector have been modified to match Aether Is standards (In addition to a divergence factor that scales based on difficulty)
 - Swets now have custom death messages for its basic death and death whilst escaping player damage
+- You can now determine whether a FloatingBlockEntity can hurt you via the `hurtable_floaters` block tag
+  - Using this tag will give entities damages based on the strength of the block and vertical velocity upon impact
 
 # Fixes
 
-- Resolved potential issues with Darts failing to be discarded after 500 ticks
+- Resolved potential issues with darts failing to be discarded after 500 ticks
 - Resolved potential mod incompatibilities due to Issues within Log Type tags
+- Fixed issues pertaining to Flax Growth being incorrectly calculated
 - Quicksoil and Grass Blocks now have proper bonemeal events (IE using bonemeal on them will place proper blocks)
 - Fixed a translation issue causing biome names to show up incorrectly (An example being the single biome interface)
 - Code optimizations and minor bug fixes

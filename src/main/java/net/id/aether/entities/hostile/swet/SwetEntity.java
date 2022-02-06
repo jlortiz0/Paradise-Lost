@@ -10,7 +10,6 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.SlimeEntity;
@@ -135,7 +134,7 @@ public abstract class SwetEntity extends SlimeEntity {
     @Override
     protected ActionResult interactMob(PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
-        if (AetherItemTags.GROWS_SWETS.contains(stack.getItem())) {
+        if (stack.isIn(AetherItemTags.GROWS_SWETS)) {
             if (!player.isCreative()) {
                 stack.decrement(1);
             }
@@ -214,7 +213,7 @@ public abstract class SwetEntity extends SlimeEntity {
         }
         // Make items ride the swet. They often shake free with the jiggle physics
         if (entity instanceof ItemEntity item) {
-            if (AetherItemTags.GROWS_SWETS.contains(item.getStack().getItem())) {
+            if (item.getStack().isIn(AetherItemTags.GROWS_SWETS)) {
                 this.setSize(this.getSize() + 1, false);
                 item.remove(RemovalReason.KILLED);
                 return;

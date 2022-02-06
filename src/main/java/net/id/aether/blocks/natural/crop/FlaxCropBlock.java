@@ -3,7 +3,6 @@ package net.id.aether.blocks.natural.crop;
 import net.id.aether.blocks.natural.TallCropBlock;
 import net.id.aether.items.AetherItems;
 import net.id.aether.tag.AetherBlockTags;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.enums.DoubleBlockHalf;
@@ -27,8 +26,8 @@ public class FlaxCropBlock extends TallCropBlock {
         }
         final int[] stoneSpots = {0};
         BlockPos.iterateOutwards(pos, 1, 1, 1).iterator().forEachRemaining(check -> {
-            Block block = world.getBlockState(pos).getBlock();
-            if(AetherBlockTags.BASE_AETHER_STONE.contains(block) || BlockTags.BASE_STONE_OVERWORLD.contains(block) || block.equals(Blocks.GRAVEL)) {
+            BlockState checkState = world.getBlockState(check);
+            if(checkState.isIn(AetherBlockTags.BASE_AETHER_STONE) || checkState.isIn(BlockTags.BASE_STONE_OVERWORLD) || checkState.isOf(Blocks.GRAVEL)) {
                 stoneSpots[0]++;
             }
         });
