@@ -24,7 +24,6 @@ public final class AetherShaders{
     
     private static Shader aural;
     private static Shader auralCutoutMipped;
-    private static Shader cubemap;
     
     static String locate(String name){
         return Aether.MOD_ID + ':' + name;
@@ -34,8 +33,7 @@ public final class AetherShaders{
         try{
             return List.of(
                 Pair.of(new Shader(manager, locate("aural"), VertexFormats.POSITION_COLOR_TEXTURE_LIGHT_NORMAL), (shader)->aural = shader),
-                Pair.of(new Shader(manager, locate("aural_cutout_mipped"), VertexFormats.POSITION_COLOR_TEXTURE_LIGHT_NORMAL), (shader)->auralCutoutMipped = shader),
-                Pair.of(new Shader(manager, locate("cubemap"), AetherVertexFormats.POSITION_COLOR_LIGHT_NORMAL), (shader)->cubemap = shader)
+                Pair.of(new Shader(manager, locate("aural_cutout_mipped"), VertexFormats.POSITION_COLOR_TEXTURE_LIGHT_NORMAL), (shader)->auralCutoutMipped = shader)
             );
         }catch(IOException e){
             System.err.print("Failed to load Aether shaders\n");
@@ -51,10 +49,6 @@ public final class AetherShaders{
     
     public static Shader getAuralCutoutMipped(){
         return auralCutoutMipped;
-    }
-    
-    public static Shader getCubemap(){
-        return cubemap;
     }
     
     private static float auralTime = 0;

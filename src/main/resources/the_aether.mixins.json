@@ -54,7 +54,6 @@
     "client.render.InGameOverlayRendererMixin",
     "client.render.LivingEntityRendererMixin",
     "client.render.MapRendererMixin",
-    "client.render.NativeImageAccessor",
     "client.render.RenderLayerAccessor",
     "client.render.RenderLayerMixin",
     "client.render.RenderLayersMixin",
