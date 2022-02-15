@@ -92,6 +92,7 @@ public class Aether implements ModInitializer, ClientModInitializer {
         MoaRaces.init();
         AetherScreens.init();
         AetherLore.init();
+        AetherParticles.init();
         if(FabricLoader.getInstance().isDevelopmentEnvironment()){
             AetherDevel.init();
         }
@@ -107,7 +108,7 @@ public class Aether implements ModInitializer, ClientModInitializer {
         AetherEntityRenderers.initClient();
         AetherColorProviders.initClient();
         AetherBlockEntityRenderers.initClient();
-        AetherParticles.initClient();
+        AetherParticles.Client.init();
         AetherTextures.initClient();
         AetherItemRenderers.initClient();
         AetherScreens.initClient();
