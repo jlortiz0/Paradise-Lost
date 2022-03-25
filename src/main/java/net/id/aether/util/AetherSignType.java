@@ -1,5 +1,7 @@
 package net.id.aether.util;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.id.aether.mixin.util.SignTypeAccessor;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.util.SpriteIdentifier;
@@ -18,13 +20,23 @@ public class AetherSignType extends SignType {
     }
 
     private static SignType register(AetherSignType type) {
-        SignType sign = SignTypeAccessor.callRegister(type);
+        return SignTypeAccessor.callRegister(type);
+    }
+    
+    @Environment(EnvType.CLIENT)
+    public static void clientInit() {
+        registerTexture(SKYROOT);
+        registerTexture(ORANGE);
+        registerTexture(WISTERIA);
+        registerTexture(GOLDEN_OAK);
+        registerTexture(CRYSTAL);
+    }
+    
+    private static void registerTexture(SignType type) {
         TexturedRenderLayers.WOOD_TYPE_TEXTURES.put(
-                sign, new SpriteIdentifier(
-                        TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, new Identifier("entity/signs/" + sign.getName())
-                )
+            type, new SpriteIdentifier(
+                TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, new Identifier("entity/signs/" + type.getName())
+            )
         );
-
-        return sign;
     }
 }
