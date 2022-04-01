@@ -1,8 +1,11 @@
-# Changes
+## Fixes
 
-- Ported to 1.18.2
+- Fixed fatal issues that prevented servers from starting
+- Updated Moretags - Should fix some issues with shears and some incompatibilities
+- Re-added structures
+- Updated leaves textures
 
-# Advisory: 1.17 -> 1.18 World Migration
+## Advisory: 1.17 ➝ 1.18 World Migration
 
 At this time, migrating worlds will work fine all elements of the mod **except** for dimension information.
 

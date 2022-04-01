@@ -38,7 +38,7 @@
     "trinkets": "*",
     "gud_recipe_confidence": "*",
     "moretags": ">=2.0.0",
-    "gud_csl": "*"
+    "satin": "*"
   },
   "mixins": [
     "the_aether.mixins.json"
@@ -49,6 +49,9 @@
       "net.id.aether.Aether"
     ],
     "client": [
+      "net.id.aether.Aether"
+    ],
+    "server": [
       "net.id.aether.Aether"
     ],
     "cardinal-components": [

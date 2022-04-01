@@ -1,10 +1,8 @@
 package net.id.aether;
 
 import de.guntram.mcmod.crowdintranslate.CrowdinTranslate;
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.*;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import net.id.aether.blocks.AetherBlocks;
 import net.id.aether.blocks.blockentity.AetherBlockEntityTypes;
@@ -31,6 +29,7 @@ import net.id.aether.loot.AetherLootNumberProviderTypes;
 import net.id.aether.lore.AetherLore;
 import net.id.aether.registry.AetherRegistries;
 import net.id.aether.screen.AetherScreens;
+import net.id.aether.util.AetherSignType;
 import net.id.aether.util.AetherSoundEvents;
 import net.id.aether.world.AetherGameRules;
 import net.id.aether.world.dimension.AetherBiomes;
@@ -59,7 +58,7 @@ import org.slf4j.LoggerFactory;
  * <br><br>
  * A list of developers can be found in {@code resources/fabric.mod.json}.
  */
-public class Aether implements ModInitializer, ClientModInitializer {
+public class Aether implements ModInitializer, ClientModInitializer, DedicatedServerModInitializer {
     public static final String MOD_ID = "the_aether";
     public static final Logger LOG = LoggerFactory.getLogger(MOD_ID);
     
@@ -124,8 +123,39 @@ public class Aether implements ModInitializer, ClientModInitializer {
         Conditions.clientInit();
         AetherShaders.init();
         HolidayBlockModel.init();
+        AetherSignType.clientInit();
         if(FabricLoader.getInstance().isDevelopmentEnvironment()){
             AetherDevel.Client.init();
         }
+    }
+    
+    // FIXME This is really really really stupid.
+    @Override
+    public void onInitializeServer() {
+        ServerLifecycleEvents.SERVER_STARTED.register((server)->{
+            var world = server.getWorld(AetherDimension.AETHER_WORLD_KEY);
+            if(world == null){
+                var message = """
+                    This crash is intentional. This is because of a bug in vanilla Minecraft that caused Paradise Lost
+                    to be unable to add the Aether dimension.
+                    
+                    Please restart the server. This should solve this error.
+                    
+                    The related issue on Mojang's issue tracker is MC-195468 at https://bugs.mojang.com/browse/MC-195468
+                    
+                    You should only ever see this error message once per world.
+                    If restarting the server doesn't solve the issue, then please contact us at https://discord.gg/eRsJ6F3Wng
+                    """;
+                
+                Runtime.getRuntime().addShutdownHook(new Thread(()->{
+                    System.err.println(
+                        "\n".repeat(10) +
+                        message +
+                        "\n".repeat(10)
+                    );
+                }));
+                throw new RuntimeException(message);
+            }
+        });
     }
 }
