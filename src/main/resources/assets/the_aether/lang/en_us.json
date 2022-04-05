@@ -271,6 +271,7 @@
 
   "book.edition": "%dst Edition",
 
+  "container.the_aether.moa": "Moa",
 
   "entity.the_aether.floating_block": "Floating Block",
   "entity.the_aether.blue_swet": "Blue Swet",
@@ -522,19 +523,62 @@
   "condition.severity.extreme": "Extreme",
   "condition.condition.venom": "Venom",
 
+  "subtitles.the_aether.block.blueberry_bush.pick_blueberries": "Blueberries pop",
 
   "subtitles.the_aether.block.portal.ambient": "Aether portal whooshes",
   "subtitles.the_aether.block.portal.travel": "Aether portal noise fades",
   "subtitles.the_aether.block.portal.trigger": "Aether portal noise intensifies",
+
+  "subtitles.the_aether.block.orange_leaves.break": "Orange leaves break",
+  "subtitles.the_aether.block.orange_leaves.drop_fruit": "Orange leaves drop fruit",
+  "subtitles.the_aether.block.orange_leaves.break_differently": "Orange leaves broken",
+
+  "subtitles.the_aether.block.lichen.spreads": "Lichen spreads",
+
+  "subtitles.the_aether.block.spring_water.ambient": "Spring water flows",
+  "subtitles.the_aether.block.spring_water.ambient.2": "Spring water bubbles",
+
+  "subtitles.the_aether.effect.simmering.simmer": "Entity simmers",
+
+  "subtitles.the_aether.entity.swet.attack": "Swet absorbs",
+
+  "subtitles.the_aether.entity.aechor_plant.death": "Aechor Plant dies",
+  "subtitles.the_aether.entity.aechor_plant.shoot": "Aechor Plant shoots",
+
   "subtitles.the_aether.entity.cockatrice.ambient": "Cockatrice ambiences",
   "subtitles.the_aether.entity.cockatrice.death": "Cockatrice dies",
   "subtitles.the_aether.entity.cockatrice.hurt": "Cockatrice hurts",
-  "subtitles.the_aether.entity.moa.ambient": "Moa ambiences",
+  "subtitles.the_aether.entity.cockatrice.spit": "Cockatrice spits",
+
+  "subtitles.the_aether.entity.moa.ambient": "Moa chirps",
+  "subtitles.the_aether.entity.moa.gliding": "Moa glides",
   "subtitles.the_aether.entity.moa.death": "Moa dies",
   "subtitles.the_aether.entity.moa.hurt": "Moa hurts",
+  "subtitles.the_aether.entity.moa.eat": "Moa eats",
+  "subtitles.the_aether.entity.moa.lay_egg": "Moa lays egg",
+  "subtitles.the_aether.entity.moa.egg_hatch": "Moa egg hatches",
+  "subtitles.the_aether.entity.moa.step": "Moa walks",
+
+  "subtitles.the_aether.entity.aerbunny.sniff": "Aerbunny sniffs",
+  "subtitles.the_aether.entity.aerbunny.jump": "Aerbunny hops",
+  "subtitles.the_aether.entity.aerbunny.hurt": "Aerbunny hurts",
+  "subtitles.the_aether.entity.aerbunny.death": "Aerbunny dies",
+  "subtitles.the_aether.entity.aerbunny.eat": "Aerbunny eats",
+
   "subtitles.the_aether.entity.nightmare.hurt": "Nightmare hurts",
   "subtitles.the_aether.entity.nightmare.ambient": "Magpie Coos",
   "subtitles.the_aether.entity.nightmare.death": "Nightmare... dies?",
+
+  "subtitles.the_aether.item.armor.equip.zanite": "Zanite armor clanks",
+  "subtitles.the_aether.item.armor.equip.gravitite": "Gravitite armor clangs",
+  "subtitles.the_aether.item.armor.equip.neptune": "Neptune armor clangs",
+  "subtitles.the_aether.item.armor.equip.phoenix": "Phoenix armor clangs",
+  "subtitles.the_aether.item.armor.equip.obsidian": "Obsidian armor clanks",
+  "subtitles.the_aether.item.armor.equip.valkyrie": "Valkyrie armor clanks",
+  "subtitles.the_aether.item.armor.equip.sentry": "Sentry armor thunks",
+
+  "subtitles.the_aether.item.dart_shooter.shoot": "Dart shooter fires",
+  "subtitles.the_aether.item.bloodstone.prick": "Bloodstone pricks",
 
 
   "easteregg.the_aether.aerwhale": "Serenity is the queen of W(h)ales!!",

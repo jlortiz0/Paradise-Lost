@@ -14,15 +14,15 @@ public class AetherSignType extends SignType {
     public static final SignType WISTERIA = register(new AetherSignType("aether_wisteria"));
     public static final SignType GOLDEN_OAK = register(new AetherSignType("aether_golden_oak"));
     public static final SignType CRYSTAL = register(new AetherSignType("aether_crystal"));
-    
+
     protected AetherSignType(String name) {
         super(name);
     }
-    
+
     private static SignType register(AetherSignType type) {
         return SignTypeAccessor.callRegister(type);
     }
-    
+
     @Environment(EnvType.CLIENT)
     public static void clientInit() {
         registerTexture(SKYROOT);
@@ -31,7 +31,7 @@ public class AetherSignType extends SignType {
         registerTexture(GOLDEN_OAK);
         registerTexture(CRYSTAL);
     }
-    
+
     @Environment(EnvType.CLIENT)
     private static void registerTexture(SignType type) {
         TexturedRenderLayers.WOOD_TYPE_TEXTURES.put(
