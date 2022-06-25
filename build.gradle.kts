@@ -112,11 +112,11 @@ dependencies {
             version = cardinalComponentsVersion,
     ).also(::include)
 
-    modImplementation(
-            group = "com.github.CDAGaming.CrowdinTranslate",
-            name = "crowdin-translate",
-            version = crowdinTranslateVersion,
-    ).also(::include)
+//    modImplementation(
+//            group = "com.github.CDAGaming.CrowdinTranslate",
+//            name = "crowdin-translate",
+//            version = crowdinTranslateVersion,
+//    ).also(::include)
 
     modImplementation(
             group = "net.kyrptonaught",
@@ -231,7 +231,7 @@ java {
 }
 
 loom {
-    accessWidenerPath.set(file("src/main/resources/the_aether.accesswidener"))
+    accessWidenerPath.set(file("src/main/resources/paradise_lost.accesswidener"))
 
     runs {
         getByName("client") {
@@ -278,7 +278,7 @@ loom {
 
 crowdintranslate {
     setCrowdinProjectname("aether")
-    minecraftProjectName = "the_aether"
+    minecraftProjectName = "paradise_lost"
     verbose = true
 }
 
