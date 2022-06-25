@@ -1,9 +1,9 @@
-package net.id.aether.world.feature.structure.generator;
+package net.id.aether.world.gen.structure.generator;
 
 import net.id.aether.Aether;
 import net.id.aether.blocks.AetherBlocks;
 import net.id.aether.tag.AetherBlockTags;
-import net.id.aether.world.feature.structure.AetherStructureFeatures;
+import net.id.aether.world.gen.structure.ParadiseLostStructures;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.structure.*;
@@ -30,11 +30,11 @@ public class SkyrootTowerGenerator {
     public static class Piece extends SimpleStructurePiece {
 
         public Piece(StructureTemplateManager manager, Identifier template, BlockPos pos, BlockRotation rotation) {
-            super(AetherStructureFeatures.SKYROOT_TOWER_PIECE, 0, manager, template, template.toString(), createPlacementData(rotation), pos);
+            super(ParadiseLostStructures.SKYROOT_TOWER_PIECE, 0, manager, template, template.toString(), createPlacementData(rotation), pos);
         }
 
         public Piece(StructureTemplateManager manager, NbtCompound nbt) {
-            super(AetherStructureFeatures.SKYROOT_TOWER_PIECE, nbt, manager, (identifier) -> createPlacementData(BlockRotation.valueOf(nbt.getString("Rot"))));
+            super(ParadiseLostStructures.SKYROOT_TOWER_PIECE, nbt, manager, (identifier) -> createPlacementData(BlockRotation.valueOf(nbt.getString("Rot"))));
         }
 
         public Piece(StructureContext context, NbtCompound nbtCompound) {

@@ -1,9 +1,9 @@
-package net.id.aether.world.feature.structure;
+package net.id.aether.world.gen.structure;
 
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
 import net.id.aether.Aether;
-import net.id.aether.world.feature.structure.generator.SkyrootTowerGenerator;
+import net.id.aether.world.gen.structure.generator.SkyrootTowerGenerator;
 import net.minecraft.structure.*;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
@@ -16,10 +16,10 @@ import net.minecraft.world.gen.structure.StructureType;
 
 import java.util.Optional;
 
-public class SkyrootTowerFeature extends Structure {
-    public static final Codec<SkyrootTowerFeature> CODEC = createCodec(SkyrootTowerFeature::new);
+public class SkyrootTowerStructure extends Structure {
+    public static final Codec<SkyrootTowerStructure> CODEC = createCodec(SkyrootTowerStructure::new);
     
-    public SkyrootTowerFeature(Structure.Config config) {
+    public SkyrootTowerStructure(Structure.Config config) {
         super(config);
     }
 
@@ -53,6 +53,6 @@ public class SkyrootTowerFeature extends Structure {
     
     @Override
     public StructureType<?> getType() {
-        return AetherStructureFeatures.SKYROOT_TOWER;
+        return ParadiseLostStructures.SKYROOT_TOWER;
     }
 }

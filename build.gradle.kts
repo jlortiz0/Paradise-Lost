@@ -17,6 +17,8 @@ val reiVersion: String by properties
 val moreTagsVersion: String by properties
 val recipeConfidenceVersion: String by properties
 val satinVersion: String by properties
+val jigsortVersion: String by properties
+val divineInterventionVersion: String by properties
 
 plugins {
     id("fabric-loom") version "0.12-SNAPSHOT"
@@ -123,6 +125,12 @@ dependencies {
     ).also(::include)
 
     modImplementation(
+            group = "com.github.devs-immortal",
+            name = "Divine-Intervention",
+            version = divineInterventionVersion,
+    ).also(::annotationProcessor).also(::include)
+
+    modImplementation(
             group = "net.fabricmc.fabric-api",
             name = "fabric-api",
             version = fabricApiVersion,
@@ -132,6 +140,12 @@ dependencies {
             group = "com.github.devs-immortal",
             name = "Incubus-Core",
             version = incubusCoreVersion,
+    ).also(::include)
+
+    modImplementation(
+            group = "com.github.devs-immortal",
+            name = "Jigsort",
+            version = jigsortVersion,
     ).also(::include)
 
     modImplementation(

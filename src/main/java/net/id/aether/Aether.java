@@ -35,6 +35,7 @@ import net.id.aether.world.dimension.AetherBiomes;
 import net.id.aether.world.dimension.AetherDimension;
 import net.id.aether.world.feature.AetherFeatures;
 import net.id.aether.world.gen.carver.AetherCarvers;
+import net.id.aether.world.gen.structure.ParadiseLostStructureSets;
 import net.id.incubus_core.devel.Devel;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;

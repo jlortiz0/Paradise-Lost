@@ -1,8 +1,8 @@
-package net.id.aether.world.feature.structure;
+package net.id.aether.world.gen.structure;
 
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
-import net.id.aether.world.feature.structure.generator.WellGenerator;
+import net.id.aether.world.gen.structure.generator.OrangeRuinGenerator;
 import net.minecraft.structure.StructurePiecesCollector;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -12,13 +12,13 @@ import net.minecraft.world.gen.structure.StructureType;
 
 import java.util.Optional;
 
-public class WellFeature extends Structure {
-    public static final Codec<WellFeature> CODEC = createCodec(WellFeature::new);
+public class OrangeRuinStructure extends Structure {
+    public static final Codec<OrangeRuinStructure> CODEC = createCodec(OrangeRuinStructure::new);
     
-    public WellFeature(Structure.Config config) {
+    public OrangeRuinStructure(Structure.Config config) {
         super(config);
     }
-
+    
     private static void addPieces(StructurePiecesCollector collector, Context context) {
         int x = context.chunkPos().x * 16;
         int z = context.chunkPos().z * 16;
@@ -27,7 +27,7 @@ public class WellFeature extends Structure {
             return;
         }
         BlockPos newPos = new BlockPos(x, y, z);
-        WellGenerator.addPieces(context.structureTemplateManager(), collector, context.random(), newPos);
+        OrangeRuinGenerator.addPieces(context.structureTemplateManager(), collector, context.random(), newPos);
     }
     
     @Override
@@ -42,6 +42,6 @@ public class WellFeature extends Structure {
     
     @Override
     public StructureType<?> getType() {
-        return AetherStructureFeatures.WELL;
+        return ParadiseLostStructures.ORANGE_RUIN;
     }
 }

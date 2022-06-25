@@ -6,7 +6,7 @@ import net.id.aether.world.feature.configured_features.AetherConfiguredFeatures;
 import net.id.aether.world.feature.features.*;
 import net.id.aether.world.feature.placed_features.AetherPlacedFeatures;
 import net.id.aether.world.feature.placement_modifiers.AetherPlacementModifiers;
-import net.id.aether.world.feature.structure.AetherStructureFeatures;
+import net.id.aether.world.gen.structure.ParadiseLostStructures;
 import net.id.aether.world.feature.tree.AetherTreeHell;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
@@ -38,7 +38,7 @@ public class AetherFeatures {
 
     public static void init() {
         AetherTreeHell.init();
-        AetherStructureFeatures.init();
+        ParadiseLostStructures.init();
         AetherConfiguredFeatures.init();
         AetherPlacementModifiers.init();
         AetherPlacedFeatures.init();

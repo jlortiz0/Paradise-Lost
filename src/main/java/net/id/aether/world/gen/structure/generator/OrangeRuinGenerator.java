@@ -1,7 +1,7 @@
-package net.id.aether.world.feature.structure.generator;
+package net.id.aether.world.gen.structure.generator;
 
 import net.id.aether.Aether;
-import net.id.aether.world.feature.structure.AetherStructureFeatures;
+import net.id.aether.world.gen.structure.ParadiseLostStructures;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.structure.*;
 import net.minecraft.structure.processor.BlockIgnoreStructureProcessor;
@@ -29,11 +29,11 @@ public class OrangeRuinGenerator {
         private boolean shifted = false;
 
         public Piece(StructureTemplateManager manager, Identifier template, BlockPos pos, BlockRotation rotation) {
-            super(AetherStructureFeatures.ORANGE_RUIN_PIECE, 0, manager, template, template.toString(), createPlacementData(rotation), pos);
+            super(ParadiseLostStructures.ORANGE_RUIN_PIECE, 0, manager, template, template.toString(), createPlacementData(rotation), pos);
         }
 
         public Piece(StructureTemplateManager manager, NbtCompound nbt) {
-            super(AetherStructureFeatures.ORANGE_RUIN_PIECE, nbt, manager, (identifier) -> createPlacementData(BlockRotation.valueOf(nbt.getString("Rot"))));
+            super(ParadiseLostStructures.ORANGE_RUIN_PIECE, nbt, manager, (identifier) -> createPlacementData(BlockRotation.valueOf(nbt.getString("Rot"))));
         }
 
         public Piece(StructureContext context, NbtCompound nbtCompound) {
