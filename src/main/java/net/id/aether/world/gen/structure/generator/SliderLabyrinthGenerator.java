@@ -97,40 +97,6 @@ public class SliderLabyrinthGenerator {
                         Pair.of(single(locate("labyrinth/corridors/downwards")), 1))));
 
         StructurePools.register(new StructurePool(
-                locate("labyrinth/corridor_delegate"),
-                EMPTY,
-                List.of(Pair.of(connecting(
-                                JigsawInfo.of(BlockPos.ORIGIN, JigsawOrientation.SOUTH_UP)
-                                        .pool(EMPTY)
-                                        .name(locate("corridor_delegate"))
-                                        .target(EMPTY),
-                                JigsawInfo.of(BlockPos.ORIGIN, JigsawOrientation.NORTH_UP)
-                                        .pool(locate("labyrinth/corridors"))
-                                        .name(EMPTY)
-                                        .target(locate("corridor"))
-                                        .immediateChance(100)), 1),
-                        Pair.of(connecting(
-                                JigsawInfo.of(BlockPos.ORIGIN, JigsawOrientation.UP_NORTH)
-                                        .pool(EMPTY)
-                                        .name(locate("corridor_delegate"))
-                                        .target(EMPTY),
-                                JigsawInfo.of(BlockPos.ORIGIN, JigsawOrientation.DOWN_NORTH)
-                                        .pool(locate("labyrinth/corridors"))
-                                        .name(EMPTY)
-                                        .target(locate("corridor"))
-                                        .immediateChance(100)), 1),
-                        Pair.of(connecting(
-                                JigsawInfo.of(BlockPos.ORIGIN, JigsawOrientation.DOWN_NORTH)
-                                        .pool(EMPTY)
-                                        .name(locate("corridor_delegate"))
-                                        .target(EMPTY),
-                                JigsawInfo.of(BlockPos.ORIGIN, JigsawOrientation.UP_NORTH)
-                                        .pool(locate("labyrinth/corridors"))
-                                        .name(EMPTY)
-                                        .target(locate("corridor"))
-                                        .immediateChance(100)), 1))));
-
-        StructurePools.register(new StructurePool(
                 locate("labyrinth/column"),
                 EMPTY,
                 List.of(Pair.of(single(locate("labyrinth/column")), 1))));
