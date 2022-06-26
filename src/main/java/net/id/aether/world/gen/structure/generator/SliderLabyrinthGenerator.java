@@ -32,6 +32,7 @@ public class SliderLabyrinthGenerator {
                     BlockStateProvider.of(Blocks.LIME_STAINED_GLASS),
                     JigsawInfo.of(0, -13, -71, JigsawOrientation.SOUTH_UP)
                             .pool(locate("labyrinth/foyers"))
+                            .name(EMPTY)
                             .target(locate("foyer_entrance"))
                             .immediateChance(100)
                             .joint(Joint.ALIGNED)

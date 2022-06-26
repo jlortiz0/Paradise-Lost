@@ -10,7 +10,7 @@ import net.minecraft.world.gen.chunk.placement.SpreadType;
 public interface ParadiseLostStructureSets {
     RegistryEntry<StructureSet> SLIDER_LABYRINTHS = StructureSets.register(
             ParadiseLostStructureSetKeys.SLIDER_LABYRINTHS,
-            RegistryEntry.of(ParadiseLostStructures.SLIDER_LABYRINTH),
+            ParadiseLostStructures.SLIDER_LABYRINTH,
             new RandomSpreadStructurePlacement(32, 8, SpreadType.LINEAR, 12847026));
 
     static void init() {

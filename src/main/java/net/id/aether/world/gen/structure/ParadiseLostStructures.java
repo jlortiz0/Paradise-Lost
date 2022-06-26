@@ -10,6 +10,7 @@ import net.minecraft.tag.BiomeTags;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.StructureTerrainAdaptation;
@@ -36,17 +37,19 @@ public class ParadiseLostStructures {
     public static final StructureType<OrangeRuinStructure> ORANGE_RUIN = ()-> OrangeRuinStructure.CODEC;
     public static final StructurePieceType ORANGE_RUIN_PIECE = OrangeRuinGenerator.Piece::new;
 
-    public static final JigsawStructure SLIDER_LABYRINTH = new JigsawStructure(
-            new Structure.Config(
-                    BuiltinRegistries.BIOME.getOrCreateEntryList(BiomeTags.IS_OVERWORLD),
-                    Map.of(),
-                    GenerationStep.Feature.SURFACE_STRUCTURES,
-                    StructureTerrainAdaptation.NONE),
-            SliderLabyrinthGenerator.STRUCTURE_POOLS,
-            Integer.MAX_VALUE,
-            ConstantHeightProvider.create(YOffset.fixed(0)),
-            false,
-            Heightmap.Type.WORLD_SURFACE_WG);
+    public static final RegistryEntry<Structure> SLIDER_LABYRINTH = BuiltinRegistries.add(BuiltinRegistries.STRUCTURE,
+            ParadiseLostStructureKeys.SLIDER_LABYRINTH,
+            new JigsawStructure(
+                    new Structure.Config(
+                            BuiltinRegistries.BIOME.getOrCreateEntryList(BiomeTags.IS_OVERWORLD),
+                            Map.of(),
+                            GenerationStep.Feature.SURFACE_STRUCTURES,
+                            StructureTerrainAdaptation.NONE),
+                    SliderLabyrinthGenerator.STRUCTURE_POOLS,
+                    65535,
+                    ConstantHeightProvider.create(YOffset.fixed(0)),
+                    false,
+                    Heightmap.Type.WORLD_SURFACE_WG));
     
     private static TagKey<Structure> tagKey(String name) {
         return TagKey.of(Registry.STRUCTURE_KEY, locate(name));
@@ -56,7 +59,6 @@ public class ParadiseLostStructures {
         register(WELL_KEY, WELL, WELL_PIECE);
         register(SKYROOT_TOWER_KEY, SKYROOT_TOWER, SKYROOT_TOWER_PIECE);
         register(ORANGE_RUIN_KEY, ORANGE_RUIN, ORANGE_RUIN_PIECE);
-        BuiltinRegistries.add(BuiltinRegistries.STRUCTURE, ParadiseLostStructureKeys.SLIDER_LABYRINTH, SLIDER_LABYRINTH);
         ParadiseLostStructurePools.init();
         ParadiseLostStructureSets.init();
     }
