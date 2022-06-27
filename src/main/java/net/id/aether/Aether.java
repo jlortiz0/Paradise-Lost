@@ -34,6 +34,7 @@ import net.id.aether.world.AetherGameRules;
 import net.id.aether.world.dimension.AetherBiomes;
 import net.id.aether.world.dimension.AetherDimension;
 import net.id.aether.world.feature.AetherFeatures;
+import net.id.aether.world.gen.SlideDensityFunction;
 import net.id.aether.world.gen.carver.AetherCarvers;
 import net.id.incubus_core.devel.Devel;
 import net.minecraft.util.Identifier;
@@ -88,6 +89,7 @@ public class Aether implements ModInitializer, ClientModInitializer, DedicatedSe
     public void onInitialize() {
         AetherRegistries.init();
         AetherCarvers.init();
+        SlideDensityFunction.init();
         AetherFeatures.init();
         AetherBiomes.init();
         AetherDimension.init();
