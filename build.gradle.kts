@@ -19,6 +19,7 @@ val recipeConfidenceVersion: String by properties
 val satinVersion: String by properties
 val jigsortVersion: String by properties
 val divineInterventionVersion: String by properties
+val worldEditVersion: String by properties
 
 plugins {
     id("fabric-loom") version "0.12-SNAPSHOT"
@@ -41,7 +42,7 @@ repositories {
 
     maven {
         name = "Hephaestus"
-        url = uri("https://hephaestus.dev/release")
+        url = uri("https://hephaestus.dev/release/")
     }
 
     maven {
@@ -51,7 +52,7 @@ repositories {
 
     maven {
         name = "Ladysnake"
-        url = uri("https://ladysnake.jfrog.io/artifactory/mods")
+        url = uri("https://ladysnake.jfrog.io/artifactory/mods/")
     }
 
     maven {
@@ -65,18 +66,23 @@ repositories {
     }
 
     maven {
-        name = "JamesWhiteShirt"
-        url = uri("https://maven.jamieswhiteshirt.com/libs-release/")
-    }
-
-    maven {
         name = "Gudenau"
-        url = uri("https://maven.gudenau.net")
+        url = uri("https://maven.gudenau.net/")
     }
 
     maven {
         name = "Jitpack"
-        url = uri("https://jitpack.io")
+        url = uri("https://jitpack.io/")
+    }
+
+    maven {
+        name = "EngneHub"
+        url = uri("https://repo.enginehub.org/artifactory/repo/")
+    }
+
+    maven {
+        name = "JamesWhiteShirt"
+        url = uri("https://maven.jamieswhiteshirt.com/libs-release/")
     }
 }
 
@@ -188,6 +194,12 @@ dependencies {
             group = "me.shedaniel",
             name = "RoughlyEnoughItems-fabric",
             version = reiVersion,
+    )
+
+    modRuntimeOnly(
+            group = "com.sk89q.worldedit",
+            name = "worldedit-fabric-mc1.19",
+            version = worldEditVersion,
     )
 }
 

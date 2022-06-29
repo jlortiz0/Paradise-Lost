@@ -26,7 +26,6 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.util.registry.Registry;
 
 import static net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings.copy;
 import static net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings.of;
@@ -382,8 +381,8 @@ public class AetherBlocks {
         return copy(TORCH).ticksRandomly().luminance(state -> 15);
     }
 
-    public static final AmbrosiumTorchBlock AMBROSIUM_TORCH = addImmediately("ambrosium_torch", new AmbrosiumTorchBlock(ambrosiumTorch()), cutoutRenderLayer);
-    public static final AmbrosiumWallTorchBlock AMBROSIUM_TORCH_WALL = addImmediately("ambrosium_wall_torch", new AmbrosiumWallTorchBlock(ambrosiumTorch().dropsLike(AMBROSIUM_TORCH)), cutoutRenderLayer);
+    public static final AmbrosiumTorchBlock AMBROSIUM_TORCH = add("ambrosium_torch", new AmbrosiumTorchBlock(ambrosiumTorch()), cutoutRenderLayer);
+    public static final AmbrosiumWallTorchBlock AMBROSIUM_TORCH_WALL = add("ambrosium_wall_torch", new AmbrosiumWallTorchBlock(ambrosiumTorch().dropsLike(AMBROSIUM_TORCH)), cutoutRenderLayer);
 
     // Swet Drops
     private static Settings swetDrop() {
@@ -412,21 +411,6 @@ public class AetherBlocks {
     @SafeVarargs
     private static <V extends Block> V add(String id, V block, Action<? super V>... additionalActions) {
         return AetherRegistryQueues.BLOCK.add(locate(id), block, additionalActions);
-    }
-
-    /*
-       This is the same thing the add method above, but it doesn't wait to register or perform the actions.
-       This is required because some of the block settings code uses ID caches, so without it some blocks
-       behave like air.
-     */
-    @SafeVarargs
-    private static <T extends Block> T addImmediately(String name, T block, Action<? super T>... actions) {
-        var id = locate(name);
-        Registry.register(Registry.BLOCK, id, block);
-        for (var action : actions) {
-            action.accept(id, block);
-        }
-        return block;
     }
 
     public static void init() {
