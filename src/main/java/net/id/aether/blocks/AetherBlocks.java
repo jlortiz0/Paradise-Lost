@@ -382,7 +382,7 @@ public class AetherBlocks {
     }
 
     public static final AmbrosiumTorchBlock AMBROSIUM_TORCH = add("ambrosium_torch", new AmbrosiumTorchBlock(ambrosiumTorch()), cutoutRenderLayer);
-    public static final AmbrosiumWallTorchBlock AMBROSIUM_TORCH_WALL = add("ambrosium_wall_torch", new AmbrosiumWallTorchBlock(ambrosiumTorch().dropsLike(AMBROSIUM_TORCH)), cutoutRenderLayer);
+    public static final AmbrosiumWallTorchBlock AMBROSIUM_TORCH_WALL = add("ambrosium_wall_torch", new AmbrosiumWallTorchBlock(ambrosiumTorch()), cutoutRenderLayer);
 
     // Swet Drops
     private static Settings swetDrop() {
