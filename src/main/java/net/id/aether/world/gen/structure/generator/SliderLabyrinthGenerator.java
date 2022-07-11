@@ -10,7 +10,6 @@ import net.minecraft.structure.pool.StructurePool;
 import net.minecraft.structure.pool.StructurePools;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockBox;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
@@ -29,7 +28,7 @@ public class SliderLabyrinthGenerator {
             locate("labyrinth/base"),
             EMPTY,
             List.of(Pair.of(box(new BlockBox(-75, -22, -75, 75, 8, 75),
-                    BlockStateProvider.of(Blocks.LIME_STAINED_GLASS),
+                    BlockStateProvider.of(Blocks.AIR),
                     JigsawInfo.of(0, -13, -71, JigsawOrientation.SOUTH_UP)
                             .pool(locate("labyrinth/foyers"))
                             .name(EMPTY)
@@ -71,7 +70,8 @@ public class SliderLabyrinthGenerator {
         StructurePools.register(new StructurePool(
                 locate("labyrinth/hallways"),
                 locate("labyrinth/hallway_end"),
-                List.of(Pair.of(single(locate("labyrinth/hallways/base")), 1))));
+                List.of(Pair.of(single(locate("labyrinth/hallways/base")), 16),
+                        Pair.of(single(locate("labyrinth/hallways/living_wall")), 1))));
 
         StructurePools.register(new StructurePool(
                 locate("labyrinth/hallway_walls"),
@@ -86,9 +86,10 @@ public class SliderLabyrinthGenerator {
         StructurePools.register(new StructurePool(
                 locate("labyrinth/walls"),
                 EMPTY,
-                List.of(Pair.of(single(locate("labyrinth/walls/horizontal")), 1),
-                        Pair.of(single(locate("labyrinth/walls/upwards")), 1),
-                        Pair.of(single(locate("labyrinth/walls/downwards")), 1))));
+                List.of(Pair.of(single(locate("labyrinth/walls/horizontal")), 24),
+                        Pair.of(single(locate("labyrinth/walls/upwards")), 24),
+                        Pair.of(single(locate("labyrinth/walls/downwards")), 24),
+                        Pair.of(single(locate("labyrinth/walls/living_wall")), 1))));
 
         StructurePools.register(new StructurePool(
                 locate("labyrinth/corridors"),
