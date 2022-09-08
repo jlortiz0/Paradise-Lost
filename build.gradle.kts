@@ -20,6 +20,7 @@ val satinVersion: String by properties
 val jigsortVersion: String by properties
 val divineInterventionVersion: String by properties
 val worldEditVersion: String by properties
+val noChatReportsVersion: String by properties
 
 plugins {
     id("fabric-loom") version "0.12-SNAPSHOT"
@@ -69,6 +70,16 @@ repositories {
         name = "Gudenau"
         url = uri("https://maven.gudenau.net/")
     }
+    
+    maven {
+        name = "JamesWhiteShirt"
+        url = uri("https://maven.jamieswhiteshirt.com/libs-release/")
+    }
+
+    maven {
+        name = "Modrinth"
+        url = uri("https://api.modrinth.com/maven")
+    }
 
     maven {
         name = "Jitpack"
@@ -83,6 +94,11 @@ repositories {
     maven {
         name = "JamesWhiteShirt"
         url = uri("https://maven.jamieswhiteshirt.com/libs-release/")
+    }
+
+    maven {
+        name = "Gudenau"
+        url = uri("https://maven.gudenau.net")
     }
 }
 
@@ -190,10 +206,16 @@ dependencies {
             version = modmenuVersion,
     )
 
-    modRuntimeOnly(
-            group = "me.shedaniel",
-            name = "RoughlyEnoughItems-fabric",
-            version = reiVersion,
+//    modRuntimeOnly(
+//            group = "me.shedaniel",
+//            name = "RoughlyEnoughItems-fabric",
+//            version = reiVersion,
+//    )
+
+    include(
+            group = "maven.modrinth",
+            name = "no-chat-reports",
+            version = noChatReportsVersion,
     )
 
     modRuntimeOnly(
