@@ -599,7 +599,7 @@ public final class ParadiseLostBiomes {
     
     private static Biome createHighlandsShield() {
         return new Biome.Builder()
-            .effects(createBiomeEffects(0xC0C0FF, 0xfae05f, 0xaef5d6, 0xFFFFFF, 0x58E5FF, 0x63E7FF))
+            .effects(createBiomeEffects(0xC0C0FF, 0xfae05f, 0xc0e69c, 0xFFFFFF, 0x58E5FF, 0x63E7FF))
             .generationSettings(createGenerationSettings(
                 getParadiseLostCarvers(),
     
