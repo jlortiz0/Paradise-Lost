@@ -4,10 +4,9 @@ import net.id.paradiselost.entities.ParadiseLostEntityTypes;
 import net.id.paradiselost.world.gen.carver.ParadiseLostCarvers;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
@@ -74,7 +73,7 @@ public final class ParadiseLostBiomes {
     }
     
     private static RegistryKey<Biome> register(String name) {
-        return RegistryKey.of(Registry.BIOME_KEY, locate(name));
+        return RegistryKey.of(RegistryKeys.BIOME, locate(name));
     }
     
     private static RegistryEntry<Biome> register(RegistryKey<Biome> key, Biome biome) {

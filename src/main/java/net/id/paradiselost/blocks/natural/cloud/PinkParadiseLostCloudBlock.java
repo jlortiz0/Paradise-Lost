@@ -7,12 +7,12 @@ import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.World;
+import org.joml.Vector3f;
 
 public class PinkParadiseLostCloudBlock extends ParadiseLostCloudBlock {
 
-    private static final ParticleEffect pinkFluff = new DustParticleEffect(new Vec3f(0.89F, 0.65F, 0.9F), 1F);
+    private static final ParticleEffect pinkFluff = new DustParticleEffect(new Vector3f(0.89F, 0.65F, 0.9F), 1F);
 
     public PinkParadiseLostCloudBlock(Settings properties) {
         super(properties);

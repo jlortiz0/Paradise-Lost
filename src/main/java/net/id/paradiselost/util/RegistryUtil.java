@@ -1,7 +1,7 @@
 package net.id.paradiselost.util;
 
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.world.RegistryWorldView;
 import net.minecraft.world.dimension.DimensionType;
 import org.jetbrains.annotations.Nullable;
@@ -12,7 +12,7 @@ public class RegistryUtil {
             return false;
         }
 
-        DimensionType shatteredSky = world.getRegistryManager().get(Registry.DIMENSION_TYPE_KEY).get(type);
+        DimensionType shatteredSky = world.getRegistryManager().get(RegistryKeys.DIMENSION_TYPE).get(type);
         return world.getDimension().equals(shatteredSky);
     }
 }

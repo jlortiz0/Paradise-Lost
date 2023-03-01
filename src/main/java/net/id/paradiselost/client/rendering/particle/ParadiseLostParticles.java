@@ -9,7 +9,8 @@ import net.id.paradiselost.ParadiseLost;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleType;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 
 /**
  * The server/common parts of the Paradise Lost particle system.
@@ -35,7 +36,7 @@ public class ParadiseLostParticles {
      * @return The new type
      */
     private static DefaultParticleType register(String id) {
-        return Registry.register(Registry.PARTICLE_TYPE, ParadiseLost.locate(id), FabricParticleTypes.simple(true));
+        return Registry.register(Registries.PARTICLE_TYPE, ParadiseLost.locate(id), FabricParticleTypes.simple(true));
     }
     
     /**
@@ -47,7 +48,7 @@ public class ParadiseLostParticles {
      * @return The new type
      */
     private static <T extends ParticleEffect> ParticleType<T> register(String id, ParticleEffect.Factory<T> factory) {
-        return Registry.register(Registry.PARTICLE_TYPE, ParadiseLost.locate(id), FabricParticleTypes.complex(true, factory));
+        return Registry.register(Registries.PARTICLE_TYPE, ParadiseLost.locate(id), FabricParticleTypes.complex(true, factory));
     }
     
     /**

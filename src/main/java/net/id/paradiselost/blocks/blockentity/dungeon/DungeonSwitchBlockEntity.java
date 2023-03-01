@@ -10,6 +10,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.event.BlockPositionSource;
 import net.minecraft.world.event.GameEvent;
 import net.minecraft.world.event.PositionSource;
@@ -65,8 +66,8 @@ public class DungeonSwitchBlockEntity extends BlockEntity implements GameEventLi
     }
 
     @Override
-    public boolean listen(ServerWorld world, GameEvent.Message event) {
-        if (event.getEvent() == GameEvent.EXPLODE) {
+    public boolean listen(ServerWorld world, GameEvent event, GameEvent.Emitter emitter, Vec3d emitterPos) {
+        if (event == GameEvent.EXPLODE) {
             if (world != null && world.getBlockState(getPos()).getBlock() instanceof DungeonSwitchBlock dungeonSwitchBlock) {
                 dungeonSwitchBlock.onExplosionEvent(world, getPos());
             }

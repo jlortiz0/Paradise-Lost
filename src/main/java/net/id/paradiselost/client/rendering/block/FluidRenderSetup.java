@@ -12,11 +12,11 @@ import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockRenderView;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,7 +35,7 @@ public class FluidRenderSetup {
             registry.register(flowingSpriteId);
         });
 
-        final Identifier fluidId = Registry.FLUID.getId(still);
+        final Identifier fluidId = Registries.FLUID.getId(still);
         final Identifier listenerId = new Identifier(fluidId.getNamespace(), fluidId.getPath() + "_reload_listener");
 
         final Sprite[] fluidSprites = {null, null};

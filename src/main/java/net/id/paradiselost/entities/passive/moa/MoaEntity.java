@@ -580,7 +580,7 @@ public class MoaEntity extends SaddleMountEntity implements JumpingMount, Tameab
     }
 
     @Override
-    public boolean canJump() {
+    public boolean canJump(PlayerEntity entity) {
         return this.isSaddled();
     }
 

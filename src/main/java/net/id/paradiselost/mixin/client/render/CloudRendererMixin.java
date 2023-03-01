@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.id.paradiselost.world.dimension.ParadiseLostDimension;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gl.ShaderProgram;
 import net.minecraft.client.gl.VertexBuffer;
 import net.minecraft.client.option.CloudRenderMode;
 import net.minecraft.client.render.*;
@@ -11,10 +12,10 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Matrix4f;
 import net.minecraft.util.math.Vec3d;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -62,7 +63,7 @@ public final class CloudRendererMixin {
         throw new NullPointerException("null cannot be cast to non-null type net.minecraft.client.world.ClientWorld");
     }
 
-    @Inject(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;FDDD)V", at = @At("HEAD"), cancellable = true)
     public void renderClouds(MatrixStack matrices, Matrix4f model, float tickDelta, double cameraX, double cameraY, double cameraZ, CallbackInfo ci) {
         if (world.getRegistryKey() == ParadiseLostDimension.PARADISE_LOST_WORLD_KEY) {
             internalCloudRender(matrices, model, tickDelta, cameraX, cameraY, cameraZ, 160, 1f, 1f);
@@ -136,7 +137,7 @@ public final class CloudRendererMixin {
                     } else {
                         RenderSystem.colorMask(true, true, true, true);
                     }
-                    Shader shader = RenderSystem.getShader();
+                    ShaderProgram shader = RenderSystem.getShader();
                     cloudsBuffer.draw(matrices.peek().getPositionMatrix(), projectionMatrix, shader);
                 }
                 VertexBuffer.unbind();

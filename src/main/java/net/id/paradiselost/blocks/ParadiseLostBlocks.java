@@ -34,12 +34,13 @@ import net.id.incubus_core.woodtypefactory.api.WoodTypeFactory;
 import net.minecraft.block.*;
 import net.minecraft.block.AbstractBlock.Settings;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
-import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.util.registry.Registry;
 
 import java.util.List;
 
@@ -407,7 +408,7 @@ public class ParadiseLostBlocks {
     @SafeVarargs
     private static <T extends Block> T addImmediately(String name, T block, Action<? super T>... actions) {
         var id = locate(name);
-        Registry.register(Registry.BLOCK, id, block);
+        Registry.register(Registries.BLOCK, id, block);
         for (var action : actions) {
             action.accept(id, block);
         }

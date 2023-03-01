@@ -3,9 +3,9 @@ package net.id.paradiselost.world.feature.configured_features;
 import net.id.paradiselost.world.feature.placed_features.ParadiseLostPlacedFeatures;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
@@ -70,7 +70,7 @@ public class ParadiseLostConfiguredFeatures {
         static final List<BlockState> GENERIC_FLOOR_WHITELIST = List.of(HIGHLANDS_GRASS.getDefaultState(), COARSE_DIRT.getDefaultState(), FLOESTONE.getDefaultState(), COBBLED_FLOESTONE.getDefaultState());
 
         protected static <C extends FeatureConfig, F extends Feature<C>> F register(String name, F feature) {
-            return Registry.register(Registry.FEATURE, locate(name), feature);
+            return Registry.register(Registries.FEATURE, locate(name), feature);
         }
     }
 }

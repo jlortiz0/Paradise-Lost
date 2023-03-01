@@ -10,8 +10,13 @@ import net.id.paradiselost.util.MiscUtil;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.kyrptonaught.customportalapi.event.CPASoundEventData;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.dynamic.RegistryOps;
-import net.minecraft.util.registry.*;
+import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.registry.MutableRegistry;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryOps;
+import net.minecraft.registry.SimpleRegistry;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.dimension.DimensionType;
@@ -23,10 +28,10 @@ import static net.id.paradiselost.ParadiseLost.MOD_ID;
 import static net.id.paradiselost.ParadiseLost.locate;
 
 public class ParadiseLostDimension {
-    public static final RegistryKey<World> PARADISE_LOST_WORLD_KEY = key(Registry.WORLD_KEY, MOD_ID);
-    public static final RegistryKey<DimensionType> DIMENSION_TYPE = key(Registry.DIMENSION_TYPE_KEY, MOD_ID);
-    public static final RegistryKey<DimensionOptions> OPTIONS_KEY = key(Registry.DIMENSION_KEY, MOD_ID);
-    public static final RegistryKey<FlatLevelGeneratorPreset> SUPERFLAT_PRESET = key(Registry.FLAT_LEVEL_GENERATOR_PRESET_KEY, MOD_ID);
+    public static final RegistryKey<World> PARADISE_LOST_WORLD_KEY = key(RegistryKeys.WORLD, MOD_ID);
+    public static final RegistryKey<DimensionType> DIMENSION_TYPE = key(RegistryKeys.DIMENSION_TYPE, MOD_ID);
+    public static final RegistryKey<DimensionOptions> OPTIONS_KEY = key(RegistryKeys.DIMENSION, MOD_ID);
+    public static final RegistryKey<FlatLevelGeneratorPreset> SUPERFLAT_PRESET = key(RegistryKeys.FLAT_LEVEL_GENERATOR_PRESET, MOD_ID);
     
     private static DimensionType dimensionType;
     

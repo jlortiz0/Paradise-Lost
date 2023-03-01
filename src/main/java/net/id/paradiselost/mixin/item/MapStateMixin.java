@@ -4,7 +4,7 @@ import net.id.paradiselost.util.MapDimensionData;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.map.MapState;
 import net.minecraft.network.Packet;
-import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

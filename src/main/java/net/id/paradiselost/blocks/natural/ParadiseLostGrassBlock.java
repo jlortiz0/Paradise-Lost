@@ -5,12 +5,13 @@ import net.id.paradiselost.blocks.util.SpreadableParadiseLostBlock;
 import net.id.paradiselost.world.feature.placed_features.ParadiseLostVegetationPlacedFeatures;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Fertilizable;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.RandomPatchFeatureConfig;
@@ -22,8 +23,9 @@ public class ParadiseLostGrassBlock extends SpreadableParadiseLostBlock implemen
         super(settings);
     }
 
+
     @Override
-    public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
         return world.getBlockState(pos.up()).isAir();
     }
 

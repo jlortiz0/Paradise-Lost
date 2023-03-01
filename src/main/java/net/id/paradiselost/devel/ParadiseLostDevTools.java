@@ -5,8 +5,9 @@ import net.id.paradiselost.entities.block.SliderEntity;
 import net.id.paradiselost.items.ParadiseLostItemGroups;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.registry.Registry;
 
 /**
  * Tools for paradise lost development, such as blocks and items
@@ -37,7 +38,7 @@ class ParadiseLostDevTools {
     };
 
     static void init() {
-        Registry.register(Registry.ITEM, ParadiseLost.locate("slider_test_item"), SLIDER_TEST_ITEM);
+        Registry.register(Registries.ITEM, ParadiseLost.locate("slider_test_item"), SLIDER_TEST_ITEM);
     }
 
 //    static { // TODO: Do we need this to be reimplemented?

@@ -2,8 +2,8 @@ package net.id.paradiselost.tag;
 
 import net.id.paradiselost.ParadiseLost;
 import net.minecraft.item.Item;
-import net.minecraft.tag.TagKey;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 
 public class ParadiseLostItemTags {
     public static final TagKey<Item> PARACHUTES = register("parachutes");
@@ -12,6 +12,6 @@ public class ParadiseLostItemTags {
     public static final TagKey<Item> SACRED_WEAPONS = register("tool/sacred_weapons");
 
     private static TagKey<Item> register(String id) {
-        return TagKey.of(Registry.ITEM_KEY, ParadiseLost.locate(id));
+        return TagKey.of(RegistryKeys.ITEM, ParadiseLost.locate(id));
     }
 }

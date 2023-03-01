@@ -2,8 +2,8 @@ package net.id.paradiselost.items.accessories;
 
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 // unused
 public class ParadiseLostAccessory {
@@ -24,7 +24,7 @@ public class ParadiseLostAccessory {
     }
 
     public Identifier getRegistryName() {
-        return Registry.ITEM.getId(accessoryStack.getItem());
+        return Registries.ITEM.getId(accessoryStack.getItem());
     }
 
     public AccessoryType getAccessoryType() {

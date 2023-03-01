@@ -2,8 +2,8 @@ package net.id.paradiselost.tag;
 
 import net.id.paradiselost.ParadiseLost;
 import net.minecraft.entity.EntityType;
-import net.minecraft.tag.TagKey;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 
 public class ParadiseLostEntityTypeTags {
 
@@ -14,6 +14,6 @@ public class ParadiseLostEntityTypeTags {
     public static final TagKey<EntityType<?>> FROSTBITE_IMMUNITY = register("condition_immunities/frostbite");
 
     private static TagKey<EntityType<?>> register(String id) {
-        return TagKey.of(Registry.ENTITY_TYPE_KEY, ParadiseLost.locate(id));
+        return TagKey.of(RegistryKeys.ENTITY_TYPE, ParadiseLost.locate(id));
     }
 }

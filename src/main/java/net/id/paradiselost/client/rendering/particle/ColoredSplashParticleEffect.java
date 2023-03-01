@@ -5,8 +5,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleType;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.registry.Registry;
 
 /**
  * The common data for the colored splash particle.
@@ -60,6 +60,6 @@ public record ColoredSplashParticleEffect(
     // Seems to be used to convert to a command, unsure if that is the case.
     @Override
     public String asString() {
-        return Registry.PARTICLE_TYPE.getId(getType()) + " " + red + " " + green + " " + blue;
+        return Registries.PARTICLE_TYPE.getId(getType()) + " " + red + " " + green + " " + blue;
     }
 }

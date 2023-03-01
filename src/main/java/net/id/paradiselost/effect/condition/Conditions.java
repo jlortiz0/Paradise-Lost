@@ -7,7 +7,7 @@ import net.id.paradiselost.client.rendering.ui.ParadiseLostOverlayRegistrar;
 import net.id.incubus_core.condition.IncubusCondition;
 import net.id.incubus_core.condition.api.Condition;
 import net.id.incubus_core.condition.api.ConditionAPI;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 
 public class Conditions {
     public static final Condition VENOM = register("venom", new VenomCondition());
