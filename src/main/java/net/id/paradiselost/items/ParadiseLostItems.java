@@ -361,7 +361,7 @@ public class ParadiseLostItems {
 
     // lights
     public static final BlockItem CHERINE_LANTERN = add("cherine_lantern", ParadiseLostBlocks.CHERINE_LANTERN, decoration);
-    public static final WallStandingBlockItem CHERINE_TORCH = add("cherine_torch", new WallStandingBlockItem(ParadiseLostBlocks.CHERINE_TORCH, ParadiseLostBlocks.CHERINE_TORCH_WALL, decoration));
+    public static final VerticallyAttachableBlockItem CHERINE_TORCH = add("cherine_torch", new VerticallyAttachableBlockItem(ParadiseLostBlocks.CHERINE_TORCH, ParadiseLostBlocks.CHERINE_TORCH_WALL, decoration));
     // util blocks (enchanter, freezer, etc.)
 
     public static final BlockItem CHERINE_CAMPFIRE = add("cherine_campfire", ParadiseLostBlocks.CHERINE_CAMPFIRE, decoration);

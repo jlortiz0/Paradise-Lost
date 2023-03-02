@@ -13,6 +13,7 @@ import net.minecraft.client.render.*;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -39,9 +40,9 @@ public abstract class InGameOverlayRendererMixin {
         MinecraftClient client = MinecraftClient.getInstance();
         BlockState overlayState = getInWallBlockState(client.player);
         if (overlayState != null && overlayState.getBlock() instanceof ParadiseLostCloudBlock) {
-            RenderSystem.setShader(GameRenderer::getPositionTexShader);
+            RenderSystem.setShader(GameRenderer::getPositionTexProgram);
             RenderSystem.enableTexture();
-            RenderSystem.setShaderTexture(0, ParadiseLost.locate("textures/block/" + Registry.BLOCK.getId(overlayState.getBlock()).getPath() + ".png"));
+            RenderSystem.setShaderTexture(0, ParadiseLost.locate("textures/block/" + Registries.BLOCK.getId(overlayState.getBlock()).getPath() + ".png"));
             BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
             float f = client.player.getBrightnessAtEyes();
             RenderSystem.enableBlend();
@@ -55,7 +56,7 @@ public abstract class InGameOverlayRendererMixin {
             bufferBuilder.vertex(matrix4f, 1.0F, -1.0F, -0.5F).texture(0.0F - yaw, 1.0F + pitch).next();
             bufferBuilder.vertex(matrix4f, 1.0F, 1.0F, -0.5F).texture(0.0F - yaw, 0.0F + pitch).next();
             bufferBuilder.vertex(matrix4f, -1.0F, 1.0F, -0.5F).texture(1.0F - yaw, 0.0F + pitch).next();
-            BufferRenderer.drawWithShader(bufferBuilder.end());
+            BufferRenderer.draw(bufferBuilder.end());
             //FIXME? Should this be removed? The original doesn't have it.
             RenderSystem.disableBlend();
             ci.cancel();
@@ -84,7 +85,7 @@ public abstract class InGameOverlayRendererMixin {
         BlockPos pos = new BlockPos(client.player.getEyePos());
         World world = client.player.world;
         if (world.getFluidState(pos).getFluid() instanceof DenseCloudFluid) {
-            RenderSystem.setShader(GameRenderer::getPositionTexShader);
+            RenderSystem.setShader(GameRenderer::getPositionTexProgram);
             RenderSystem.enableTexture();
             RenderSystem.setShaderTexture(0, ParadiseLost.locate("textures/block/dense_cloud_still.png"));
             BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
@@ -100,7 +101,7 @@ public abstract class InGameOverlayRendererMixin {
             bufferBuilder.vertex(matrix4f, 1.0F, -1.0F, -0.5F).texture(0.0F + m, 4.0F + n).next();
             bufferBuilder.vertex(matrix4f, 1.0F, 1.0F, -0.5F).texture(0.0F + m, 0.0F + n).next();
             bufferBuilder.vertex(matrix4f, -1.0F, 1.0F, -0.5F).texture(4.0F + m, 0.0F + n).next();
-            BufferRenderer.drawWithShader(bufferBuilder.end());
+            BufferRenderer.draw(bufferBuilder.end());
             RenderSystem.disableBlend();
             ci.cancel();
         }

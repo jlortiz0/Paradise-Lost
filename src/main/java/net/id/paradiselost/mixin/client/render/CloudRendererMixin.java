@@ -118,7 +118,7 @@ public final class CloudRendererMixin {
                 VertexBuffer.unbind();
             }
 
-            RenderSystem.setShader(GameRenderer::getPositionTexColorNormalShader);
+            RenderSystem.setShader(GameRenderer::getPositionTexColorNormalProgram);
             RenderSystem.setShaderTexture(0, CLOUDS);
             BackgroundRenderer.setFogBlack();
             matrices.push();

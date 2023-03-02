@@ -14,6 +14,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 
 public class ParadiseLostLeavesBlock extends LeavesBlock implements Fertilizable {
 
@@ -105,7 +106,7 @@ public class ParadiseLostLeavesBlock extends LeavesBlock implements Fertilizable
     }
 
     @Override
-    public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
         return !getHanger(state).isAir() && world.getBlockState(pos.down()).isAir();
     }
 

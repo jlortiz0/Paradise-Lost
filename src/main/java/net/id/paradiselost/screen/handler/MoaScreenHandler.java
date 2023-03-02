@@ -143,7 +143,7 @@ public class MoaScreenHandler extends ScreenHandler {
     }
     
     @Override
-    public ItemStack transferSlot(PlayerEntity player, int sourceSlot) {
+    public ItemStack quickMove(PlayerEntity player, int sourceSlot) {
         ItemStack result = ItemStack.EMPTY;
         Slot slot = slots.get(sourceSlot);
         if (!slot.hasStack()) {

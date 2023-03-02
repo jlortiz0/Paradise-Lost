@@ -11,6 +11,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.RotationAxis;
 import org.joml.Vector3f;
 
 public class CherineCampfireBlockEntityRenderer implements BlockEntityRenderer<CherineCampfireBlockEntity> {
@@ -31,8 +32,8 @@ public class CherineCampfireBlockEntityRenderer implements BlockEntityRenderer<C
                 matrixStack.translate(0.5D, 0.44921875D, 0.5D);
                 Direction direction2 = Direction.fromHorizontal((l + direction.getHorizontal()) % 4);
                 float g = -direction2.asRotation();
-                matrixStack.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(g));
-                matrixStack.multiply(Vector3f.POSITIVE_X.getDegreesQuaternion(90.0F));
+                matrixStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(g));
+                matrixStack.multiply(RotationAxis.POSITIVE_X.rotationDegrees(90.0F));
                 matrixStack.translate(-0.3125D, -0.3125D, 0.0D);
                 matrixStack.scale(0.375F, 0.375F, 0.375F);
                 MinecraftClient.getInstance().getItemRenderer().renderItem(itemStack, ModelTransformation.Mode.FIXED, i, j, matrixStack, vertexConsumerProvider, k + l);

@@ -3,6 +3,7 @@ package net.id.paradiselost.blocks.natural;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.state.StateManager;
@@ -15,13 +16,11 @@ import net.minecraft.world.WorldView;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.function.Supplier;
-
 public class ParadiseLostWallMushroomBlock extends ParadiseLostMushroomBlock {
 
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
-    public ParadiseLostWallMushroomBlock(Settings settings, Supplier<RegistryEntry<? extends ConfiguredFeature<?, ?>>> feature) {
+    public ParadiseLostWallMushroomBlock(Settings settings, RegistryKey<ConfiguredFeature<?, ?>> feature) {
         super(settings, feature, ParadiseLostMushroomBlock.HangType.WALL);
     }
 

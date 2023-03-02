@@ -106,7 +106,7 @@ public final class LoreScreen extends HandledScreen<LoreHandler> {
     @Override
     protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
         matrices.push();
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, WIDGET_TEXTURE);
     
@@ -155,7 +155,7 @@ public final class LoreScreen extends HandledScreen<LoreHandler> {
         entityBuilders.draw();
          */
     
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, WIDGET_TEXTURE);
         RenderSystem.enableBlend();

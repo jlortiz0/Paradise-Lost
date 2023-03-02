@@ -173,7 +173,7 @@ public interface LoreState extends AutoSyncedComponent {
                 MinecraftClient.getInstance().getToastManager().add(new Toast() {
                     @Override
                     public Visibility draw(MatrixStack matrices, ToastManager manager, long startTime) {
-                        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+                        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
                         RenderSystem.setShaderTexture(0, TEXTURE);
                         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                         manager.drawTexture(matrices, 0, 0, 0, 0, this.getWidth(), this.getHeight());

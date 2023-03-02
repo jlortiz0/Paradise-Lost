@@ -15,7 +15,7 @@ public final class LoreHandler extends ScreenHandler {
     }
     
     @Override
-    public ItemStack transferSlot(PlayerEntity player, int index) {
+    public ItemStack quickMove(PlayerEntity player, int index) {
         throw new AssertionError("Please don't call me, I'm unimplemented. :-(");
     }
     

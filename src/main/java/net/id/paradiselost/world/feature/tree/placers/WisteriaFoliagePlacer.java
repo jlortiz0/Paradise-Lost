@@ -51,7 +51,7 @@ public class WisteriaFoliagePlacer extends FoliagePlacer {
         BlockPos nodePos = treeNode.getCenter();
         BlockPos altNodePos = nodePos.up(offset);
 
-        BlockState leafBlock = config.foliageProvider.getBlockState(random, nodePos);
+        BlockState leafBlock = config.foliageProvider.get(random, nodePos);
         BlockState hanger = Blocks.AIR.getDefaultState();
 
         if (leafBlock.getBlock() instanceof ParadiseLostLeavesBlock || leafBlock.getBlock() instanceof AuralLeavesBlock) {

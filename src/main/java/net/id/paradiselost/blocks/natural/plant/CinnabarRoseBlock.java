@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.DustParticleEffect;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
@@ -21,13 +22,11 @@ import net.minecraft.world.WorldView;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.function.Supplier;
-
 public class CinnabarRoseBlock extends ParadiseLostMushroomBlock {
 
     public static final BooleanProperty BLOOMING = BooleanProperty.of("blooming");
 
-    public CinnabarRoseBlock(Settings settings, Supplier<RegistryEntry<? extends ConfiguredFeature<?, ?>>> feature) {
+    public CinnabarRoseBlock(Settings settings, RegistryKey<ConfiguredFeature<?, ?>> feature) {
         super(settings, feature, HangType.FLOOR);
         setDefaultState(getDefaultState().with(BLOOMING, false));
     }

@@ -361,8 +361,8 @@ public class ParadiseLostBlocks {
     public static final ParadiseLostTallBrushBlock WILD_FLAX = add("wild_flax", new ParadiseLostTallBrushBlock(flower()), flammablePlant, cutoutMippedRenderLayer);
 
     // Ores
-    public static final OreBlock CHERINE_ORE = add("cherine_ore", new OreBlock(of(Material.STONE).requiresTool().strength(3f), UniformIntProvider.create(0, 2)));
-    public static final OreBlock OLVITE_ORE = add("olvite_ore", new OreBlock(of(Material.STONE).requiresTool().strength(3f), UniformIntProvider.create(0, 2)));
+    public static final ExperienceDroppingBlock CHERINE_ORE = add("cherine_ore", new ExperienceDroppingBlock(of(Material.STONE).requiresTool().strength(3f), UniformIntProvider.create(0, 2)));
+    public static final ExperienceDroppingBlock OLVITE_ORE = add("olvite_ore", new ExperienceDroppingBlock(of(Material.STONE).requiresTool().strength(3f), UniformIntProvider.create(0, 2)));
     public static final Block CHERINE_BLOCK = add("cherine_block", new Block(of(Material.METAL).requiresTool().strength(3f, -1f).sounds(BlockSoundGroup.STONE)));
     public static final Block OLVITE_BLOCK = add("olvite_block", new Block(of(Material.METAL).requiresTool().strength(3f, -1f).sounds(BlockSoundGroup.METAL)));
     // Misc

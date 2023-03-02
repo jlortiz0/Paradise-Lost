@@ -13,6 +13,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
 public class MossStarBlock extends PlantBlock implements Waterloggable, Fertilizable {
@@ -40,11 +41,6 @@ public class MossStarBlock extends PlantBlock implements Waterloggable, Fertiliz
     }
 
     @Override
-    public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
-        return state.get(Properties.WATERLOGGED);
-    }
-
-    @Override
     public FluidState getFluidState(BlockState state) {
         return state.get(Properties.WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
@@ -52,6 +48,11 @@ public class MossStarBlock extends PlantBlock implements Waterloggable, Fertiliz
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
         return !floor.isAir();
+    }
+
+    @Override
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
+        return state.get(Properties.WATERLOGGED);
     }
 
     @Override
