@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    "X#X",
+	" X "
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:blaze_powder"
+    },
+	"#": {
+      "item": "minecraft:magma_block"
+    }
+  },
+  "result": {
+    "item": "paradise_lost:sunstone"
+  }
+}

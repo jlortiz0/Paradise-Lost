@@ -182,6 +182,8 @@ public class ParadiseLostItems {
     public static final BlockItem FLOESTONE = add("floestone", ParadiseLostBlocks.FLOESTONE, building_block);
     public static final BlockItem COBBLED_FLOESTONE = add("cobbled_floestone", ParadiseLostBlocks.COBBLED_FLOESTONE, building_block);
     public static final BlockItem VITROULITE = add("vitroulite", ParadiseLostBlocks.VITROULITE, building_block);
+
+    public static final BlockItem SUNSTONE = add("sunstone", ParadiseLostBlocks.SUNSTONE, building_block);
     // nature
     public static final BlockItem HIGHLANDS_GRASS = add("highlands_grass", ParadiseLostBlocks.HIGHLANDS_GRASS, building_block);
 

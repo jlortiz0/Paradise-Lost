@@ -75,7 +75,7 @@ public class CloudCarver extends Carver<CloudCarverConfig> {
                     width *= random.nextFloat() * random.nextFloat() * 1.50F + 1.0F;
                 }
 
-                width *= config.widthMultiplier.get(random);
+                width *= (config.widthMultiplier.get(random)* 3);
 
                 // Reduce the branch count by 0% to 25%
                 int maxBranches = size - random.nextInt(size / 4);

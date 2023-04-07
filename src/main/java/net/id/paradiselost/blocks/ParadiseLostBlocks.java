@@ -88,6 +88,8 @@ public class ParadiseLostBlocks {
     // Organic Extra
     public static final Block VITROULITE = add("vitroulite", new Block(of(Material.DENSE_ICE).requiresTool().hardness(0.5f).sounds(BlockSoundGroup.GLASS)));
 
+
+
     // Smooth Floestone
     private static Settings floestone() {
         return of(Material.STONE, MapColor.WHITE_GRAY).requiresTool().strength(0.5f, 1f).sounds(BlockSoundGroup.STONE);
@@ -370,6 +372,7 @@ public class ParadiseLostBlocks {
     public static final CherineLanternBlock CHERINE_LANTERN = add("cherine_lantern", new CherineLanternBlock(copy(LANTERN).resistance(1f)), cutoutMippedRenderLayer);
     public static final ParadiseLostPortalBlock BLUE_PORTAL = add("blue_portal", new ParadiseLostPortalBlock(copy(NETHER_PORTAL).nonOpaque().blockVision(never).mapColor(MapColor.BLUE)), translucentRenderLayer);
 
+    public static final Block SUNSTONE = add("sunstone", new Block(of(Material.STONE).requiresTool().hardness(0.5f).sounds(BlockSoundGroup.GILDED_BLACKSTONE).luminance(value -> 12)));
     // Torches
     private static Settings cherineTorch() {
         return copy(TORCH).ticksRandomly().luminance(state -> 15);
@@ -401,7 +404,7 @@ public class ParadiseLostBlocks {
 
     /*
        This is the same thing the add method above, but it doesn't wait to register or perform the actions.
-       This is required because some of the block settings code uses ID caches, so without it some blocks
+       This is required because some block settings code uses ID caches, so without it some blocks
        behave like air.
      */
     @SafeVarargs

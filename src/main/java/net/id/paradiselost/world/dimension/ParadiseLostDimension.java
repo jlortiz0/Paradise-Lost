@@ -42,7 +42,7 @@ public class ParadiseLostDimension {
         }
         
         CustomPortalBuilder.beginPortal()
-                .frameBlock(Blocks.GLOWSTONE)
+                .frameBlock(Blocks.SHROOMLIGHT)
                 .customPortalBlock(ParadiseLostBlocks.BLUE_PORTAL)
                 .destDimID(locate(MOD_ID))
                 .tintColor(55, 89, 195)

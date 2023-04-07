@@ -51,6 +51,6 @@ public class ParadiseLostPortalBlock extends CustomPortalBlock {
 
     @Override
     public Block getPortalBase(World world, BlockPos pos) {
-        return Blocks.GLOWSTONE;
+        return Blocks.SHROOMLIGHT;
     }
 }
