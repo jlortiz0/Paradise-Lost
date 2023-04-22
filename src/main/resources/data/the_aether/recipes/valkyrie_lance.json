@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " #G",
+        " D#",
+        "/  "
+    ],
+    "key": {
+        "#": {
+            "item": "harvest_scythes:valkyrie_scythe"
+        },
+        "G": {
+            "item": "the_aether:holy_sword"
+        },
+        "D": {
+            "item": "the_aether:gravitite_gemstone"
+        },
+        "/": {
+            "item": "gate_of_babylon:extended_stick"
+        }
+    },
+    "result": {
+        "item": "the_aether:valkyrie_lance",
+        "count": 1
+    }
+}

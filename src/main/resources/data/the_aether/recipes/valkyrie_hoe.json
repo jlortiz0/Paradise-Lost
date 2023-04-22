@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#D",
+        " /",
+        " /"
+    ],
+    "key": {
+        "#": {
+            "item": "arclight:arclight_ingot"
+        },
+        "D": {
+            "item": "the_aether:gravitite_gemstone"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "the_aether:valkyrie_hoe",
+        "count": 1
+    }
+}
