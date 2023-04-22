@@ -18,8 +18,5 @@ public class AetherFoodComponent {
     public static final FoodComponent GENERIC = new FoodComponent.Builder().hunger(2).saturationModifier(1.5F).build();
     public static final FoodComponent GENERIC_WORSE = new FoodComponent.Builder().hunger(1).saturationModifier(0.25F)
             .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 100, 0), 0.075F).build();
-    public static final FoodComponent VALKYRIE_MILK = new FoodComponent.Builder().hunger(12).saturationModifier(2F).snack().alwaysEdible()
-            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 1200, 2), 1F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 3600, 4), 1F)
-            .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 3600, 1), 1F).build();
+    public static final FoodComponent VALKYRIE_MILK = new FoodComponent.Builder().hunger(3).saturationModifier(1.25F).snack().alwaysEdible().build();
 }

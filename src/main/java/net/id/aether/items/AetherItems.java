@@ -224,7 +224,7 @@ public class AetherItems {
     public static final AliasedBlockItem FLAXSEED = add("flaxseed", new AliasedBlockItem(AetherBlocks.FLAX, food()), compostable30);
     public static final Item BLUE_GUMMY_SWET = add("blue_gummy_swet", new Item(food(AetherFoodComponent.GUMMY_SWET, AetherRarity.AETHER_LOOT)));
     public static final Item GOLDEN_GUMMY_SWET = add("golden_gummy_swet", new Item(food(AetherFoodComponent.GUMMY_SWET, AetherRarity.AETHER_LOOT)));
-    public static final ValkyrieMilkItem VALKYRIE_MILK = add("valkyrie_milk", new ValkyrieMilkItem(food(AetherFoodComponent.VALKYRIE_MILK, EPIC).maxCount(1)));
+    public static final ValkyrieMilkItem VALKYRIE_MILK = add("valkyrie_milk", new ValkyrieMilkItem(food(AetherFoodComponent.VALKYRIE_MILK, EPIC).maxCount(32)));
     public static final Item CANDY_CANE = add("candy_cane", new Item(food(AetherFoodComponent.GENERIC)), compostable30);
     public static final Item GINGERBREAD_MAN = add("ginger_bread_man", new Item(food(AetherFoodComponent.GENERIC)), compostable30);
     public static final Item MOA_MEAT = add("moa_meat", new Item(food(AetherFoodComponent.MOA_MEAT)));
