@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
@@ -20,7 +21,7 @@ public class ValkyrieMilkItem extends Item {
 
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        return user instanceof PlayerEntity player && player.getAbilities().creativeMode ?
-                super.finishUsing(stack, world, user) : new ItemStack(AetherItems.QUICKSOIL_VIAL);
+        super.finishUsing(stack, world, user);
+        return stack.isEmpty() ? new ItemStack(AetherItems.QUICKSOIL_VIAL) : stack;
     }
 }
