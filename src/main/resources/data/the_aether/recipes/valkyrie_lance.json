@@ -16,7 +16,7 @@
             "item": "the_aether:gravitite_gemstone"
         },
         "/": {
-            "item": "gate_of_babylon:extended_stick"
+            "item": "gateofbabylon:extended_stick"
         }
     },
     "result": {

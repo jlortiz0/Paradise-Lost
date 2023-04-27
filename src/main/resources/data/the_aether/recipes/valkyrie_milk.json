@@ -13,21 +13,10 @@
     {
       "item": "the_aether:quicksoil_vial"
     },
-    {
-      "item": "the_aether:quicksoil_vial"
-    },
-    {
-      "item": "the_aether:quicksoil_vial"
-    },
-    {
-      "item": "the_aether:quicksoil_vial"
-    },
-    {
-      "item": "the_aether:quicksoil_vial"
-    },
     [
       {
-        "item": "minecraft:milk_bucket"
+        "item": "minecraft:milk_bucket",
+        "data": 9
       },
       {
         "item": "the_aether:skyroot_milk_bucket"
@@ -39,6 +28,6 @@
   ],
   "result": {
     "item": "the_aether:valkyrie_milk",
-    "count": 8
+    "count": 4
   }
 }
